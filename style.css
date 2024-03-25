@@ -105,22 +105,21 @@ body {
 }
 
 .third-party {
-    display: inline-flex; /* Change display to flex */
-    align-items: center; /* Vertically center content */
-    padding: 10px 15px; /* Adjust padding to provide more space */
+    display: inline-block;
+    padding: 10px;
     border: solid 1px #aaa;
     background: #eee;
     border-radius: 0.1em;
     color: #555;
-    min-width: 70px; /* Set a minimum width to accommodate longer text */
-    height: 1.2em;
+    width: auto; /* Adjust width as needed */
+    height: auto; /* Adjust height as needed */
     text-transform: none;
     border-bottom-width: 0.3em;
     border-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
     font-family: monospace;
     font-size: calc(13px);
-    line-height: 1.2em; /* Vertically center the text */
+    font-weight: bold; /* Make the text bold */
 }
 
 .third-party:active {
