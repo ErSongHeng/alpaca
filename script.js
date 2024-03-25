@@ -107,7 +107,7 @@
 
     /*////////////////////////////////////////*/
 
-    world.gravity.y = 0.25;
+    world.gravity.y = 0.6;
     var color = green;
     var width = shape[0].length * size;
     var height = shape.length * size;
@@ -417,5 +417,68 @@
     //     }
     //   })
 
+    // Add Third Party function
+    function thirdparty() {
+        var color = pink;
+        var girl = softSkeleton(300, 6, shape, size, {
+            stiffness: 0.99,
+            render: {
+                visible: false
+            }
+        }, function (x, y, size, i, j) {
+            let s = size * (j < 4 ? 0.8 : 1);
+            let c = i === 2 && j === 9 ? '#000' :
+                // Eyeball 
+                j % 2 !== (i % 2 ? 0 : 1) ? color : '#52C292';
+            return Bodies.rectangle(x, y, s, s, {
+                render: {
+                    fillStyle: c,
+                    strokeStyle: color,
+                    lineWidth: s * 0.3
+                }
+            });
+        });
     
+        /*////////////////////////////////////////*/
+    
+        var shape2 = shape.slice(0);
+        shape2.map(function (row) {
+            return row.reverse();
+        });
+        color = green;
+        startX = Math.max(width * 2, sceneWidth - width / 2); // - ( arr2[0].length * size );
+    
+        var boy = softSkeleton(300, 6, shape2, size, {
+            stiffness: 0.9,
+            render: {
+                visible: false
+            }
+        }, function (x, y, size, i, j) {
+            let s = size * (j > 7 ? 0.8 : 1);
+            let c = i === 2 && j === 2 ? '#000' :
+                // Eye
+                j % 2 !== (i % 2 ? 0 : 1) ? color : '#CD4B72';
+            return Bodies.rectangle(x, y, s, s, {
+                //mass: 0.6,
+                render: {
+                    fillStyle: c,
+                    strokeStyle: color,
+                    lineWidth: s * 0.3
+                }
+            });
+        });
+
+        var chance = Math.random() <= 0.5;
+        if (chance) {
+            World.add(world, girl);
+        } else {
+            World.add(world,boy);
+        }
+        
+
+    }
+
+    // Event listener for the reset button
+    document.getElementById("addCharacterButton").addEventListener("click", thirdparty);
+
 })();
