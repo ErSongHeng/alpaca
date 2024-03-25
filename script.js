@@ -479,6 +479,6 @@
     }
 
     // Event listener for the reset button
-    document.getElementById("addCharacterButton").addEventListener("click", thirdparty);
+    document.getElementById("addCharacterButton").addEventListener("touchstart", thirdparty);
 
 })();
