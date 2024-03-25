@@ -107,7 +107,7 @@
 
     /*////////////////////////////////////////*/
 
-    world.gravity.y = 0.6;
+    world.gravity.y = 0.25;
     var color = green;
     var width = shape[0].length * size;
     var height = shape.length * size;
