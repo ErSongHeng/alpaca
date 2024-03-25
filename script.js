@@ -43,7 +43,7 @@
     var mouseConstraint = MouseConstraint.create(engine, {
         mouse: Mouse.create(canvas)
     });
-    var ground = Bodies.rectangle(sceneWidth / 2, sceneHeight + sceneHeight / 2, Math.max(sceneWidth * 4, 2000), sceneHeight, {
+    var ground = Bodies.rectangle(sceneWidth / 2, sceneHeight + sceneHeight / 2, Math.max(sceneWidth * 8, 2000), sceneHeight, {
         isStatic: true,
         render: {
             opacity: 1,
@@ -416,4 +416,6 @@
     //       this.boundsScale = boundsScale; 
     //     }
     //   })
+
+    
 })();
