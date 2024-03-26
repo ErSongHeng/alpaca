@@ -180,14 +180,14 @@
             case 'arrowleft':
                 target = girlTarget;
                 break;
-            case '1':
-            case '2':
+            case 'z':
+            case 'x':
                 target = boy1Target;
                 break;
         }
         switch (key) {
             case 'arrowleft':
-            case '1':
+            case 'z':
                 invert = true;
                 break;
         }
@@ -480,5 +480,6 @@
 
     // Event listener for the reset button
     document.getElementById("addCharacterButton").addEventListener("touchstart", thirdparty);
+	document.getElementById("addCharacterButton").addEventListener("click", thirdparty);
 
 })();
